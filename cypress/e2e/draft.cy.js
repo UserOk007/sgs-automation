@@ -120,3 +120,89 @@ describe('draft validateSearch', () => {
 
 // cy.get('.coveo-accessible-button.coveo-clickable').first().click();
 // cy.get('.coveo-checkbox-button[aria-pressed="true"]').should('be.visible', 'true'); or should exist
+
+
+
+
+
+                                               //FIND JOB
+
+  /* it('select location, verify results show selected location and check that City field becomes enabled', () => {
+        cy.get(selectors.findJob.locationDropDownId).parent(selectors.findJob.containerDropDown).click();
+        cy.get(selectors.findJob.locationDropDownResultsArea).find(selectors.findJob.selectedListOption).then(options => {
+            const randomIndex = Math.floor(Math.random() * options.length);
+            const selectedOption = options[randomIndex];
+            const optionText = selectedOption.innerText;
+            cy.log(`Selected option text: ${optionText}`);
+            cy.wrap(selectedOption).click();
+            cy.wait(3000)
+            cy.get(selectors.findJob.countryCityResult)
+                .each((element) => {
+                    // Extract the text from each element
+                    cy.wrap(element).invoke('text').then(cityCountryText => {
+                        // Compare superText with optionText
+                        expect(cityCountryText).to.contain(optionText);
+                    })
+
+                });
+
+        });
+cy.get(selectors.findJob.cityDropDown).parent('div').should('not.have.class', selectors.findJob.disabledClass)
+    })
+
+    it('select Department option and check that only specific department is shown in results block', () => {
+        cy.get(selectors.findJob.departmentDropDownId).parent(selectors.findJob.containerDropDown).click();
+        cy.get(selectors.findJob.departmentDropDownResultsArea).find(selectors.findJob.selectedListOption).then(options => {
+            const randomIndex = Math.floor(Math.random() * options.length);
+            const selectedOption = options[randomIndex];
+            const optionText = selectedOption.innerText;
+            cy.log(`Selected option text: ${optionText}`);
+            cy.wrap(selectedOption).click();
+            cy.wait(3000)
+            cy.get(selectors.findJob.departmentAccordionName)
+            .invoke('text').then(departmentAccordionText => { expect(departmentAccordionText).to.contain(optionText) })
+        })
+
+    })
+
+    it('select Business Line option and verify results show selected option', () => {
+        cy.get(selectors.findJob.businessLineDropDownId).parent(selectors.findJob.containerDropDown).click();
+        cy.get(selectors.findJob.businessLineDropDownResultsArea).find(selectors.findJob.selectedListOption).then(options => {
+            const randomIndex = Math.floor(Math.random() * options.length);
+            const selectedOption = options[randomIndex];
+            const optionText = selectedOption.innerText;
+            cy.log(`Selected option text: ${optionText}`);
+            cy.wrap(selectedOption).click();
+            cy.wait(3000)
+            cy.get(selectors.findJob.businessLineResult)
+                .each((element) => {
+                    // Extract the text from each element
+                    cy.wrap(element).invoke('text').then(businessLineText => {
+                        // Compare superText with optionText
+                        expect(businessLineText).to.contain(optionText);
+                    })
+
+                });
+        });
+    })
+
+    it('select Contract Type option and verify results show selected option', () => {
+        cy.get(selectors.findJob.contractTypeDropDownId).parent(selectors.findJob.containerDropDown).click();
+        cy.get(selectors.findJob.contractTypeDropDownResultsArea).find(selectors.findJob.selectedListOption).then(options => {
+            const randomIndex = Math.floor(Math.random() * options.length);
+            const selectedOption = options[randomIndex];
+            const optionText = selectedOption.innerText;
+            cy.log(`Selected option text: ${optionText}`);
+            cy.wrap(selectedOption).click();
+            cy.wait(3000)
+            cy.get(selectors.findJob.contractTypeResult)
+                .each((element) => {
+                    // Extract the text from each element
+                    cy.wrap(element).invoke('text').then(contractTypeText => {
+                        // Compare superText with optionText
+                        expect(contractTypeText).to.contain(optionText);
+                    })
+
+                });
+        });
+    })*/

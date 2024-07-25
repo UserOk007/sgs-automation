@@ -5,5 +5,9 @@ export const urls = {
     contactUsUat: 'https://uat.sgs-next.com/en/contact-form',
     contactUsProd: 'https://www.sgs.com/en/contact-form',
     contactUsTest: 'https://test.sgs-next.com/en/contact-form',
-    findJobUAT: 'https://uat.sgs-next.com/en/our-company/careers-at-sgs/job-opportunities'
+    findJobUAT: 'https://uat.sgs-next.com/en/our-company/careers-at-sgs/job-opportunities',
+    findJobProd: 'https://www.sgs.com/en/our-company/careers-at-sgs/job-opportunities',
+    officeDirectoryUAT: 'https://uat.sgs-next.com/en/office-directory',
+    officeDirectoryProd: 'https://www.sgs.com/en/office-directory'
+
 }

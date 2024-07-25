@@ -90,9 +90,35 @@ export const selectors =
     typeOfWorkResult: 'dl.ResultItemSmartRecruiters_a-result-item-smart-recruiters__metadata__g2W72',
     countryCityResult: 'dl.ResultItemSmartRecruiters_a-result-item-smart-recruiters__location__CFCLx div dd',
     locationDropDownId: '#react-select-2-live-region',
-    locationDropDown: '[class="select-filter css-b62m3t-container"]',
+    containerDropDown: '[class="select-filter css-b62m3t-container"]',
     locationDropDownResultsArea: '#react-select-2-listbox',
-    locationDropDownListOption: 'div.select-filter__option'
-    
-    }
+    selectedListOption: 'div.select-filter__option',
+    departmentDropDownId: '#react-select-5-live-region',
+    departmentDropDownResultsArea: '#react-select-5-listbox',
+    departmentAccordionName: '.AccordionItemComponent_accordion-item__headline__Fif8D',
+    businessLineDropDownId: '#react-select-6-live-region',
+    businessLineDropDownResultsArea: '#react-select-6-listbox',
+    businessLineResult: 'p.mb-3',
+    contractTypeDropDownId: '#react-select-4-live-region',
+    contractTypeDropDownResultsArea: '#react-select-4-listbox',
+    contractTypeResult: 'dl.ResultItemSmartRecruiters_a-result-item-smart-recruiters__metadata__g2W72 div dd',
+    cityDropDown: 'div div#react-select-3-placeholder',
+    jobTitle: 'div.ResultItemSmartRecruiters_a-result-item-smart-recruiters__Wd2pH a',
+    searchField: 'input#keywordSearch',
+    quantityResults: '.Filters_m-filters__results___kkUd strong',
+    clearFilterButton: 'button.Filters_m-filters__clear-button__qQ1cd'
+    },
+
+officeDirectory: {
+    searchField: '.Filters_m-filters__search__Xdj7E',
+    totalResultsArea: '.Filters_m-filters__results___kkUd',
+    sortingField: '.select-filter__control',
+    paginationArea: 'ListNavigation_m-navigation__EFcj1',
+    allResultsArea: 'Results_m-results__0bMpS',
+    searchField: '#keywordSearch',
+    locationDropDownID: '[id*="live-region"]',
+    locationDropDownResultsArea: '#react-select-2-listbox',
+    titleResult: '.m-result-item__title',
+    locationResult: '.m-result-item__options-icon-item span span'
+}
 }
