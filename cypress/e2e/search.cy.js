@@ -45,7 +45,7 @@ describe('validateSearch', () => {
             cy.get(selectors.search.noResultsText).contains(testData.searchComponent.noResults);
         })
 
-    it(`Check whether searching works for filter "Type", "Topic", value is selected and breadcrumb value is correct`,
+    it.only(`Check whether searching works for filter "Type", "Topic", value is selected and breadcrumb value is correct`,
         () => {
 
             //select "Video" option in Type filter, verify breadcrumbs and Type at the result element, unclick Type option

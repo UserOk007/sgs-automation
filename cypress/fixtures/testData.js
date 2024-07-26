@@ -35,7 +35,12 @@ export const testData =
 
     findJob: {
         remoteValue: 'Remote',
-        findJobRequestURL: 'https://uat.sgs-next.com/_next/data/1ac823e7c08645f88248544ccdf82fbf/en/our-company/careers-at-sgs/job-opportunities.json'
+        findJobRequestURL: 'https://uat.sgs-next.com/en/our-company/careers-at-sgs/job-opportunities',
+        keyWord: 'product{enter}'
+    },
+
+    officeDirectory: {
+        keyWord: 'Ukraine{enter}'
     }
 
 }

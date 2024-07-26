@@ -21,5 +21,8 @@ export const resources = {
        'POST https://v1.bot.leadoo.com/**'
 
        
+    ],
+    findJob: [
+        'GET https://res.leadoo.com/**'
     ]
 }

@@ -73,6 +73,24 @@ Cypress.Commands.add('submitContactForm', (inquiryType, subjectOption, typeOfFee
     });
 });
 
+Cypress.Commands.add('selectOptionAndVerifyResults', (dropdownId, resultsArea, resultElements, expectedClass) => {
+    cy.get(dropdownId).parent(selectors.findJob.containerDropDown).click();
+    cy.get(resultsArea).find(selectors.findJob.selectedListOption).then(options => {
+        const randomIndex = Math.floor(Math.random() * options.length);
+        const selectedOption = options[randomIndex];
+        const optionText = selectedOption.innerText;
+        cy.log(`Selected option text: ${optionText}`);
+        cy.wrap(selectedOption).click();
+        cy.wait(3000)
+        cy.get(resultElements)
+            .each((element) => {
+                cy.wrap(element).invoke('text').then(text => {
+                    expect(text).to.contain(optionText);
+                });
+            });
+    });
+});
+
 Cypress.Commands.add('selectFilterVerifyFilterBreadcrumbs', ({ filterField, searchValue, dropDown, validOption }) => {
     cy.get(filterField).type(searchValue).should('have.value', searchValue).click();
     cy.get(dropDown).should('have.length', 1).click();
@@ -90,27 +108,6 @@ Cypress.Commands.add("clearFilterAndVerifyBreadCrumbRemoval", (buttonSelector) =
     cy.get(selectors.search.breadCrumbIsEmpty)
         .should('not.exist');
 });
-
-// Cypress.Commands.add('submitContactForm', (inquiryType, additionalFields = {}) => { //полегшити команду, щоб я розуміла, як вона працює
-
-//     cy.get(selectors.contact.inquiryType).select(inquiryType);
-//     cy.get(selectors.contact.firstName).should('be.visible').type(testData.contact.firstName);
-//     cy.get(selectors.contact.lastName).should('be.visible').type(testData.contact.lastName);
-//     cy.get(selectors.contact.email).should('be.visible').type(testData.contact.email);
-//     cy.get(selectors.contact.companyName).should('be.visible').type(testData.contact.companyName);
-//     cy.get(selectors.contact.jobTitle).should('be.visible').type(testData.contact.jobTitle);
-//     cy.get(selectors.contact.phone).should('be.visible').type(testData.contact.phone);
-//     cy.get(selectors.contact.questionField).should('be.visible').type(testData.contact.questionMessage);
-
-//     // Handle additional fields if any
-//     for (const [selector, value] of Object.entries(additionalFields)) {
-//         cy.get(selector).select(value);
-//     }
-
-//     cy.get(selectors.contact.sendMessageButton).should('be.visible').click();
-//     cy.get(selectors.contact.formIsSubmittedSuccessfully).should('be.visible');
-//     cy.get(selectors.contact.formIsSubmittedSuccessfullyThankYou).should('be.visible');
-// });
 
 Cypress.Commands.add('verifyFormErrorMessages', (errorMessages) => {
     cy.get(selectors.contact.sendMessageButton).should('be.visible').click();
