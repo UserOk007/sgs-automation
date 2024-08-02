@@ -106,7 +106,7 @@ export const selectors =
     jobTitle: 'div.ResultItemSmartRecruiters_a-result-item-smart-recruiters__Wd2pH a',
     searchField: 'input#keywordSearch',
     quantityResults: '.Filters_m-filters__results___kkUd strong',
-    clearFilterButton: 'button.Filters_m-filters__clear-button__qQ1cd'
+    clearFilterButton: 'button.Filters_m-filters__clear-button__qQ1cd',
     },
 
 officeDirectory: {
@@ -119,6 +119,8 @@ officeDirectory: {
     locationDropDownID: '[id*="live-region"]',
     locationDropDownResultsArea: '#react-select-2-listbox',
     titleResult: '.m-result-item__title',
-    locationResult: '.m-result-item__options-icon-item span span'
+    locationResult: '.m-result-item__options-icon-item span span',
+    resultTitle: '.m-result-item__title',
+    clearFilterButton: 'button.Filters_m-filters__clear-button__qQ1cd'
 }
 }

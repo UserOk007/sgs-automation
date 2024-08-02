@@ -17,7 +17,7 @@ export const testData =
         email: 'test@email.com',
         companyName: 'company',
         jobTitle: 'Test Engineer',
-       // phone: '123-456-7890',
+        // phone: '123-456-7890',
         questionMessage: 'Does it work?',
         inquiryTypeRequestInformationOption: 'Request Information',
         subjectTrainingCoursesOption: 'Training Courses',
@@ -40,7 +40,7 @@ export const testData =
     },
 
     officeDirectory: {
-        keyWord: 'Ukraine{enter}'
+        keyWord: 'Ukraine{enter}',
     }
 
 }
