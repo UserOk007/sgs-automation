@@ -28,16 +28,16 @@ describe('find search', () => {
 
     it('No results shown, default magnifier glass logo is shown',
         () => {
-            cy.get(selectors.findJob.noResultLogo).should('be.visible')
+            cy.get(selectors.findJob.noResultLogo).should('be.visible');
         })
     it('click on Remote check-box, verify whether only remote jobs are shown and Job Titles are links',
         () => {
-            cy.get(selectors.findJob.remoteCheckBox).find(selectors.findJob.checkBox).check()
-            cy.get(selectors.findJob.allResultsArea).should('be.visible')
+            cy.get(selectors.findJob.remoteCheckBox).find(selectors.findJob.checkBox).check();
+            cy.get(selectors.findJob.allResultsArea).should('be.visible');
             cy.get(selectors.findJob.typeOfWorkResult).each((item, index) => {
-                cy.wrap(item).should('contain', testData.findJob.remoteValue)
+                cy.wrap(item).should('contain', testData.findJob.remoteValue);
 
-                cy.get(selectors.findJob.jobTitle).should('have.attr', 'href').and('match', /jobs.smartrecruiters.com/)
+                cy.get(selectors.findJob.jobTitle).should('have.attr', 'href').and('match', /jobs.smartrecruiters.com/);
             })
         })
 
@@ -75,18 +75,19 @@ describe('find search', () => {
     });
     it('Search results that contain "product" and Clear filters', () => {
 
-        cy.get(selectors.findJob.searchField).type(testData.findJob.keyWord)
+        cy.get(selectors.findJob.searchField).type(testData.findJob.keyWord);
         cy.wait(3000);
-        cy.get(selectors.findJob.allResultsArea).should('be.visible')
+        cy.get(selectors.findJob.clearFilterButton).should('be.visible');
+        cy.get(selectors.findJob.allResultsArea).should('be.visible');
         cy.get(selectors.findJob.quantityResults).invoke('text').then((filteredResultsQuantity) => {
             const firstResultValue = parseFloat(filteredResultsQuantity.match(/\d+(\.\d+)?/)[0]);
-            cy.get(selectors.findJob.clearFilterButton).click()
-            cy.wait(3000)
+            cy.get(selectors.findJob.clearFilterButton).click();
+            cy.wait(3000);
             cy.get(selectors.findJob.quantityResults).invoke('text').then((clearedResultsQuantity) => {
                 const secondResultValue = parseFloat(clearedResultsQuantity.match(/\d+(\.\d+)?/)[0]);
-                expect(firstResultValue).to.be.lessThan(secondResultValue)
-            }
-
+                expect(firstResultValue).to.be.lessThan(secondResultValue);
+            },
+                cy.get(selectors.findJob.clearFilterButton).should('not.exist')
             )
         })
     })

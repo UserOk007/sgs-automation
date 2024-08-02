@@ -10,7 +10,7 @@ describe('validateSearch', () => {
         cy.blockNonUsedAPIs(resources.search);
         cy.visit(urls.uat);
         cy.wait(5000);
-     //   cy.get(selectors.cookiesPopUp.acceptButton).should('be.visible').click();
+        //   cy.get(selectors.cookiesPopUp.acceptButton).should('be.visible').click();
         cy.wait(3000);
         cy.get(selectors.search.searchButton).click();
         cy.get(selectors.search.searchPageTag).should('have.class', selectors.search.searchBoxOverlay);
@@ -34,7 +34,7 @@ describe('validateSearch', () => {
             cy.get(selectors.search.defaultSortingValue).should('contain', testData.searchComponent.defaultSortingValue);
 
             //pagination is represented at the page
-            cy.get(selectors.general.padinationArea).should('have.attr', selectors.general.attrHidden, 'false')
+            cy.get(selectors.general.padinationArea).should('have.attr', selectors.general.attrHidden, 'false');
         })
 
     it(`verify there are no results shown at the page`,
@@ -55,7 +55,7 @@ describe('validateSearch', () => {
                 searchValue: testData.searchComponent.typeSearchFieldValid,
                 dropDown: selectors.search.typeSerchDropDown,
                 validOption: selectors.search.typeSearchDropDownValidOption
-              });
+            });
 
             cy.clearFilter(selectors.search.clearType);
 
@@ -66,7 +66,7 @@ describe('validateSearch', () => {
                 searchValue: testData.searchComponent.topicSearchFieldValid,
                 dropDown: selectors.search.topicSerchDropDown,
                 validOption: selectors.search.topicSearchDropDownValidOption
-              });
+            });
 
             cy.clearFilterAndVerifyBreadCrumbRemoval(selectors.search.breadCrumbCloseButton);
 
