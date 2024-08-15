@@ -18,11 +18,19 @@ export const resources = {
        'HEAD /sustainability',
        'HEAD  /test-map-embed',
        'GET https://res.leadoo.com/**',
-       'POST https://v1.bot.leadoo.com/**'
-
-       
+       'POST https://v1.bot.leadoo.com/**' 
     ],
     findJob: [
         'GET https://res.leadoo.com/**'
+    ],
+
+    homePage: [
+        'GET https://res.leadoo.com/**',
+       'POST https://v1.bot.leadoo.com/**',
+       'HEAD /webinars',
+       'HEAD /our-company/careers-at-sgs',
+       'HEAD /a-test',
+       'HEAD /sustainability',
+       'HEAD  /test-map-embed',
     ]
 }

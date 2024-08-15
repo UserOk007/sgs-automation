@@ -41,6 +41,23 @@ export const testData =
 
     officeDirectory: {
         keyWord: 'Ukraine{enter}',
+    },
+
+    homePage: {
+        homePageURL: 'https://uat.sgs-next.com/',
+        countryValueInNavigationArea: 'Global',
+        quantityOfCountries: 94,
+        partialUrlForFranceFrench: '/fr-fr',
+        currentCountry: 'France',
+        currentLanguage: 'Français',
+        partialUrlForFranceEnglish: '/en-fr',
+
+    },
+
+    dividendCalculator: {
+        dontAgreeButton: 'I do not accept and agree',
+        agreeButton: 'I accept and agree',
+        submitButton: 'Submit',
     }
 
 }

@@ -9,7 +9,7 @@ export const selectors =
 
     chatBotPopUp: {
         chatBotPopUpArea: 'iframe.ld-chat-bot.ld-chat-window',
-        closeButton: '#root .ld-win-btn[title=Close]',
+        closeButton: 'iframe #root .ld-win-btn[title=Close]',
         bigCloseButton: 'iframe.ld-chat-bot.ld-chat-launcher'
     },
 
@@ -122,5 +122,30 @@ officeDirectory: {
     locationResult: '.m-result-item__options-icon-item span span',
     resultTitle: '.m-result-item__title',
     clearFilterButton: 'button.Filters_m-filters__clear-button__qQ1cd'
+},
+
+homePage: {
+    logoImage: 'svg[xmlns="http://www.w3.org/2000/svg"]',
+    heroBannerHomePageItemMainImage: 'a.HeroBannerHomepageItemComponent_o-hero-banner-homepage-item-component__link__yqHJ_ img',
+    currentCountryInNavigationBar: '.NavigationUtilityDesktop_o-navigation-utility-desktop__4blA_  button span',
+    countryValueInCountrySelectionMenu: 'a.CountryLanguageSelectorItem_m-country-language-selector-item__link__RoEYl',
+    currentLanguageInNavigationBar: 'div.select-utility-nav__placeholder',
+    languageSelector: '.select-utility-nav__value-container',
+    languageOption: '.select-utility-nav__menu-list',
+    changeLocationButtonInFooter: 'button.LocationSelectorComponent_o-location-selector-component__locator-button__qhrGz',
+    currentCountryLanguageInFooter: '.LocationSelectorComponent_o-location-selector-component__current__p_aEC strong',
+    
+
+},
+
+scriptDividend: {
+    locationDropDown: 'select#location',
+    buttonTextClass: '.button__text',
+    errorMessage: '.ScriptDividendCalculatorComponent_o-dividend-calculator-component__error__bTThc',
+    dividendCalculatorArea: '.ScriptDividendCalculatorComponent_o-dividend-calculator-component__container__qnjZP',
+    fieldClass: '.Input_m-dividend-calculator-input__wrapper__WB0j2 input',
+    disabledClass: '.Input_m-dividend-calculator-input--disabled__V4znL',
+    errorMessageWhenAllFieldsEmpty: '.FieldValidationErrors_m-field-validation-error__invalid__FGARs',
+    disabledButtonClass: '--disabled',
 }
 }
