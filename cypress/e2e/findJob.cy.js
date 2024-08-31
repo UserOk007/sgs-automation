@@ -5,7 +5,7 @@ import { resources } from "../fixtures/blockAPI";
 //import { it } from "@faker-js/faker";
 
 
-describe('find search', () => {
+describe('find job tests (SmartRecruiters)', () => {
 
     beforeEach('Open home page', () => {
 

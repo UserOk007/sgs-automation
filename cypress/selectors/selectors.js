@@ -113,15 +113,18 @@ officeDirectory: {
     searchField: '.Filters_m-filters__search__Xdj7E',
     totalResultsArea: '.Filters_m-filters__results___kkUd',
     sortingField: '.select-filter__control',
-    paginationArea: 'ListNavigation_m-navigation__EFcj1',
-    allResultsArea: 'Results_m-results__0bMpS',
+    paginationArea: '.ListNavigation_m-navigation__EFcj1',
+    allResultsArea: '.Results_m-results__0bMpS',
     searchField: '#keywordSearch',
     locationDropDownID: '[id*="live-region"]',
     locationDropDownResultsArea: '#react-select-2-listbox',
     titleResult: '.m-result-item__title',
     locationResult: '.m-result-item__options-icon-item span span',
+    locationResult2: '.m-result-item__address.richtext',
     resultTitle: '.m-result-item__title',
-    clearFilterButton: 'button.Filters_m-filters__clear-button__qQ1cd'
+    clearFilterButton: 'button.Filters_m-filters__clear-button__qQ1cd',
+    resultsAll: '.FilteredListComponent_o-filtered-list-component__N_zhf div',
+    allResultsAreNotReadyClass: '.Results__is-not-ready-ui__vU_re'
 },
 
 homePage: {
@@ -147,5 +150,8 @@ scriptDividend: {
     disabledClass: '.Input_m-dividend-calculator-input--disabled__V4znL',
     errorMessageWhenAllFieldsEmpty: '.FieldValidationErrors_m-field-validation-error__invalid__FGARs',
     disabledButtonClass: '--disabled',
+    discountField: 'input[value="6%"]',
+    buttonTag: 'button',
+   
 }
 }

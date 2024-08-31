@@ -27,6 +27,7 @@
 import { selectors } from "../selectors/selectors";
 import { testData } from "../fixtures/testData";
 import { faker } from '@faker-js/faker';
+import 'cypress-iframe';
 
 Cypress.Commands.add('clearFilter', (selectorType) => {
     cy.get(selectorType).should('be.visible').click();
@@ -40,6 +41,28 @@ Cypress.Commands.add("blockNonUsedAPIs", (listOfAPIS) => {
     });
 }
 );
+
+/*Cypress.Commands.add("blockNonUsedAPIs", (listOfAPIS) => {
+    cy.wrap(listOfAPIS).each((call) => {
+        const parsedCallInfo = call.split(' ');
+        cy.intercept(parsedCallInfo[0], parsedCallInfo[1], { body: [] }).as('silentBlock');
+    });
+});*/
+
+Cypress.Commands.add("removeChatBot", () => {
+    const chatBotSelectors = ['iframe.ld-chat-bot']; 
+
+    // Iterate through each selector and remove matching elements from the DOM
+    chatBotSelectors.forEach((selector) => {
+        cy.get('body').then(($body) => {
+            if ($body.find(selector).length > 0) {
+                cy.get(selector).then(($el) => {
+                    $el.remove();
+                });
+            }
+        });
+    });
+});
 
 Cypress.Commands.add('submitContactForm', (inquiryType, subjectOption, typeOfFeedbackOption) => {
     cy.get(selectors.contact.inquiryType).select(inquiryType);

@@ -3,7 +3,7 @@ import { urls } from "../fixtures/urls";
 import { testData } from "../fixtures/testData";
 import { resources } from "../fixtures/blockAPI";
 
-describe('find search', () => {
+describe('tests for Office Directory page', () => {
 
     beforeEach('Open home page', () => {
 
@@ -25,7 +25,7 @@ describe('find search', () => {
         cy.selectOptionAndVerifyResults(
             selectors.officeDirectory.locationDropDownID,
             selectors.officeDirectory.locationDropDownResultsArea,
-            selectors.officeDirectory.locationResult
+            selectors.officeDirectory.locationResult2
         );
     })
 
@@ -38,12 +38,9 @@ describe('find search', () => {
             cy.wait(1000);
             cy.get(selectors.officeDirectory.resultTitle).eq(0).invoke('text').then((firstTitleNotFiltered) => {
                 const firstTitleNotFilteredResult = firstTitleNotFiltered;
+                cy.get(selectors.officeDirectory.resultsAll).should('not.have.class', selectors.officeDirectory.allResultsAreNotReadyClass);
                 expect(firstTitleFilteredResult).to.not.equal(firstTitleNotFilteredResult);
             })
-
-
         })
-
     })
-
 })

@@ -58,6 +58,8 @@ export const testData =
         dontAgreeButton: 'I do not accept and agree',
         agreeButton: 'I accept and agree',
         submitButton: 'Submit',
+        calculateButton: 'Calculate',
+        
     }
 
 }
