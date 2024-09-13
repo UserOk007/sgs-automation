@@ -9,7 +9,7 @@ export const selectors =
 
     chatBotPopUp: {
         chatBotPopUpArea: 'iframe.ld-chat-bot.ld-chat-window',
-        closeButton: '#root .ld-win-btn[title=Close]',
+        closeButton: 'iframe #root .ld-win-btn[title=Close]',
         bigCloseButton: 'iframe.ld-chat-bot.ld-chat-launcher'
     },
 
@@ -113,14 +113,59 @@ officeDirectory: {
     searchField: '.Filters_m-filters__search__Xdj7E',
     totalResultsArea: '.Filters_m-filters__results___kkUd',
     sortingField: '.select-filter__control',
-    paginationArea: 'ListNavigation_m-navigation__EFcj1',
-    allResultsArea: 'Results_m-results__0bMpS',
+    paginationArea: '.ListNavigation_m-navigation__EFcj1',
+    allResultsArea: '.Results_m-results__0bMpS',
     searchField: '#keywordSearch',
     locationDropDownID: '[id*="live-region"]',
     locationDropDownResultsArea: '#react-select-2-listbox',
     titleResult: '.m-result-item__title',
     locationResult: '.m-result-item__options-icon-item span span',
+    locationResult2: '.m-result-item__address.richtext',
     resultTitle: '.m-result-item__title',
-    clearFilterButton: 'button.Filters_m-filters__clear-button__qQ1cd'
+    clearFilterButton: 'button.Filters_m-filters__clear-button__qQ1cd',
+    resultsAll: '.FilteredListComponent_o-filtered-list-component__N_zhf div',
+    allResultsAreNotReadyClass: '.Results__is-not-ready-ui__vU_re'
+},
+
+homePage: {
+    logoImage: 'svg[xmlns="http://www.w3.org/2000/svg"]',
+    heroBannerHomePageItemMainImage: 'a.HeroBannerHomepageItemComponent_o-hero-banner-homepage-item-component__link__yqHJ_ img',
+    currentCountryInNavigationBar: '.NavigationUtilityDesktop_o-navigation-utility-desktop__4blA_  button span',
+    countryValueInCountrySelectionMenu: 'a.CountryLanguageSelectorItem_m-country-language-selector-item__link__RoEYl',
+    currentLanguageInNavigationBar: 'div.select-utility-nav__placeholder',
+    languageSelector: '.select-utility-nav__value-container',
+    languageOption: '.select-utility-nav__menu-list',
+    changeLocationButtonInFooter: 'button.LocationSelectorComponent_o-location-selector-component__locator-button__qhrGz',
+    currentCountryLanguageInFooter: '.LocationSelectorComponent_o-location-selector-component__current__p_aEC strong',
+    
+
+},
+
+scriptDividend: {
+    locationDropDown: 'select#location',
+    buttonTextClass: '.button__text',
+    errorMessage: '.ScriptDividendCalculatorComponent_o-dividend-calculator-component__error__bTThc',
+    dividendCalculatorArea: '.ScriptDividendCalculatorComponent_o-dividend-calculator-component__container__qnjZP',
+    fieldClass: '.Input_m-dividend-calculator-input__wrapper__WB0j2 input',
+    disabledClass: '.Input_m-dividend-calculator-input--disabled__V4znL',
+    errorMessageWhenAllFieldsEmpty: '.FieldValidationErrors_m-field-validation-error__invalid__FGARs',
+    disabledButtonClass: '--disabled',
+    discountField: 'input[value="6%"]',
+    buttonTag: 'button',
+    locationDropDownInStep1: '.DropdownList_m-dropdown-list__pDDyb'
+},
+
+subscriptionCenter: {
+    topicOption: 'div.SubscriptionCenterSelector_m-subscription-center-selector__F1_zR span',
+    buttonNext: 'span.button__text',
+    backButton: 'div.SubscriptionCenterBack_a-subscription-center-back__button__cZQv0',
+    Step2Title: 'h3.SubscriptionCenterStep_m-subscription-center-step__title__EyMt5',
+    itemOption: 'button.SubscriptionCenterCard_a-subscription-center-card__button__30l2B',
+    firstNameField: 'input#fxb_6ff95bc7-b7f4-4afb-8068-1c4008ffd559_Fields_7c0ab4ee-c584-4e19-b686-ac0aeaea501b__Value',
+    lastNameField: 'input#fxb_6ff95bc7-b7f4-4afb-8068-1c4008ffd559_Fields_07ed15bb-3894-4aa1-93be-2fd22d1ca09b__Value',
+    emailField: 'input#fxb_6ff95bc7-b7f4-4afb-8068-1c4008ffd559_Fields_dbd90087-db38-4068-9c0c-6556457845c3__Value',
+    agreementCheckBox: '.Checkbox_m-checkbox__mBUkr input[type="checkbox"]',
+    submitButton: 'button[type="submit"]',
+    finalPageTitle: 'div.SubscriptionCenterStep_m-subscription-center-step__steps__3kYks'
 }
 }

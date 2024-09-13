@@ -8,6 +8,10 @@ export const urls = {
     findJobUAT: 'https://uat.sgs-next.com/en/our-company/careers-at-sgs/job-opportunities',
     findJobProd: 'https://www.sgs.com/en/our-company/careers-at-sgs/job-opportunities',
     officeDirectoryUAT: 'https://uat.sgs-next.com/en/office-directory',
-    officeDirectoryProd: 'https://www.sgs.com/en/office-directory'
+    officeDirectoryProd: 'https://www.sgs.com/en/office-directory',
+    homePageUAT: 'https://uat.sgs-next.com/en',
+    dividendCalculatorUAT: 'https://uat.sgs-next.com/en/testing-october-folder/dividend-calculator',
+    subscriptionCenterUAT: 'https://uat.sgs-next.com/en/newsletters/subscription-center-form'
+    
 
 }

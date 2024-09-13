@@ -41,6 +41,37 @@ export const testData =
 
     officeDirectory: {
         keyWord: 'Ukraine{enter}',
+    },
+
+    homePage: {
+        homePageURL: 'https://uat.sgs-next.com/',
+        countryValueInNavigationArea: 'Global',
+        quantityOfCountries: 94,
+        partialUrlForFranceFrench: '/fr-fr',
+        currentCountry: 'France',
+        currentLanguage: 'Français',
+        partialUrlForFranceEnglish: '/en-fr',
+
+    },
+
+    dividendCalculator: {
+        dontAgreeButton: 'I do not accept and agree',
+        agreeButton: 'I accept and agree',
+        submitButton: 'Submit',
+        calculateButton: 'Calculate',
+        discountPercentage: '6%',
+        calculateButton: 'Calculate',
+        issuePriceOfNewShares: '19.27',
+        numberOfNewShares: '16',
+        cashDistribution: '11.68',
+    },
+
+    subscriptionCenter: {
+        step2Title: 'Sign up for SGS News & Updates',
+        firstNameValue: 'First',
+        lastNameValue: 'Last',
+        emailValue: 'email@test.com',
+        finalPageText: 'Thank you for signing up! You will shortly receive a confirmation email.'
     }
 
 }

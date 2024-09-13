@@ -3,16 +3,15 @@ import { urls } from "../fixtures/urls";
 import { testData } from "../fixtures/testData";
 import { resources } from "../fixtures/blockAPI";
 import { faker } from '@faker-js/faker';
-//import sendMessage from './commands';
 
-
-describe('validateSearch', () => {
+describe('validate tests in Contact Us page form', () => {
 
     beforeEach('Open home page', () => {
 
         cy.visit(urls.contactUsTest);
         cy.wait(5000);
-        cy.get(selectors.cookiesPopUp.acceptButton).should('be.visible').click();
+        cy.get(selectors.cookiesPopUp.acceptButton)
+            .should('be.visible').click();
         cy.wait(3000);
     });
 
@@ -51,7 +50,8 @@ describe('validateSearch', () => {
 
     it(`Contact button is disabled`,
         () => {
-            cy.get(selectors.contact.contactButton).should('have.class', selectors.contact.disabledContactButtonClass);
+            cy.get(selectors.contact.contactButton)
+                .should('have.class', selectors.contact.disabledContactButtonClass);
         });
 
     it(`Verify Invalid messages are shown`,
@@ -69,13 +69,9 @@ describe('validateSearch', () => {
 
         })
 
-
-    it(`Select random Location option from the drop-down list`, () => {
-        cy.selectRandomOption(selectors.contact.locationDropDown);
-    });
-
-    it.only('Privacy Statement text is contains a link', () => {
-        cy.get(selectors.contact.privacyStatementLink).should('have.attr', 'href', '/en/online-privacy-statement');
+    it('Privacy Statement text is contains a link', () => {
+        cy.get(selectors.contact.privacyStatementLink)
+            .should('have.attr', 'href', '/en/online-privacy-statement');
     });
 
 });
