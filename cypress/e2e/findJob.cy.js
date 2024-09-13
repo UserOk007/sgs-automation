@@ -11,7 +11,8 @@ describe('find job tests (SmartRecruiters)', () => {
 
         cy.visit(urls.findJobUAT);
         cy.wait(5000);
-        cy.get(selectors.cookiesPopUp.acceptButton).should('be.visible').click();
+        cy.get(selectors.cookiesPopUp.acceptButton)
+            .should('be.visible').click();
         cy.wait(3000);
     });
 
@@ -23,21 +24,31 @@ describe('find job tests (SmartRecruiters)', () => {
 
     it(`verify "City" field is disabled for Global version`,
         () => {
-            cy.get(selectors.findJob.cityFieldId).parent(selectors.findJob.jobFieldParentSelector).should('have.class', selectors.findJob.disabledClass);
+            cy.get(selectors.findJob.cityFieldId)
+                .parent(selectors.findJob.jobFieldParentSelector)
+                .should('have.class', selectors.findJob.disabledClass);
         })
 
     it('No results shown, default magnifier glass logo is shown',
         () => {
-            cy.get(selectors.findJob.noResultLogo).should('be.visible');
+            cy.get(selectors.findJob.noResultLogo)
+                .should('be.visible');
         })
     it('click on Remote check-box, verify whether only remote jobs are shown and Job Titles are links',
         () => {
-            cy.get(selectors.findJob.remoteCheckBox).find(selectors.findJob.checkBox).check();
-            cy.get(selectors.findJob.allResultsArea).should('be.visible');
-            cy.get(selectors.findJob.typeOfWorkResult).each((item, index) => {
-                cy.wrap(item).should('contain', testData.findJob.remoteValue);
+            cy.get(selectors.findJob.remoteCheckBox)
+                .find(selectors.findJob.checkBox).check();
 
-                cy.get(selectors.findJob.jobTitle).should('have.attr', 'href').and('match', /jobs.smartrecruiters.com/);
+            cy.get(selectors.findJob.allResultsArea)
+                .should('be.visible');
+
+            cy.get(selectors.findJob.typeOfWorkResult).each((item, index) => {
+                cy.wrap(item)
+                    .should('contain', testData.findJob.remoteValue);
+
+                cy.get(selectors.findJob.jobTitle)
+                    .should('have.attr', 'href')
+                    .and('match', /jobs.smartrecruiters.com/);
             })
         })
 
@@ -47,7 +58,9 @@ describe('find job tests (SmartRecruiters)', () => {
             selectors.findJob.locationDropDownResultsArea,
             selectors.findJob.countryCityResult,
         );
-        cy.get(selectors.findJob.cityDropDown).parent('div').should('not.have.class', selectors.findJob.disabledClass)
+        cy.get(selectors.findJob.cityDropDown)
+            .parent('div')
+            .should('not.have.class', selectors.findJob.disabledClass)
     });
 
     it('select Department option and check that only specific department is shown in results block', () => {
@@ -77,19 +90,29 @@ describe('find job tests (SmartRecruiters)', () => {
 
         cy.get(selectors.findJob.searchField).type(testData.findJob.keyWord);
         cy.wait(3000);
-        cy.get(selectors.findJob.clearFilterButton).should('be.visible');
-        cy.get(selectors.findJob.allResultsArea).should('be.visible');
-        cy.get(selectors.findJob.quantityResults).invoke('text').then((filteredResultsQuantity) => {
-            const firstResultValue = parseFloat(filteredResultsQuantity.match(/\d+(\.\d+)?/)[0]);
-            cy.get(selectors.findJob.clearFilterButton).click();
-            cy.wait(3000);
-            cy.get(selectors.findJob.quantityResults).invoke('text').then((clearedResultsQuantity) => {
-                const secondResultValue = parseFloat(clearedResultsQuantity.match(/\d+(\.\d+)?/)[0]);
-                expect(firstResultValue).to.be.lessThan(secondResultValue);
-            },
-                cy.get(selectors.findJob.clearFilterButton).should('not.exist')
-            )
-        })
+
+        cy.get(selectors.findJob.clearFilterButton)
+            .should('be.visible');
+
+        cy.get(selectors.findJob.allResultsArea)
+            .should('be.visible');
+
+        cy.get(selectors.findJob.quantityResults)
+            .invoke('text')
+            .then((filteredResultsQuantity) => {
+                const firstResultValue = parseFloat(filteredResultsQuantity.match(/\d+(\.\d+)?/)[0]);
+                cy.get(selectors.findJob.clearFilterButton)
+                    .click();
+                cy.wait(3000);
+                cy.get(selectors.findJob.quantityResults)
+                    .invoke('text').then((clearedResultsQuantity) => {
+                        const secondResultValue = parseFloat(clearedResultsQuantity.match(/\d+(\.\d+)?/)[0]);
+                        expect(firstResultValue).to.be.lessThan(secondResultValue);
+                    },
+                        cy.get(selectors.findJob.clearFilterButton)
+                            .should('not.exist')
+                    )
+            })
     })
 });
 

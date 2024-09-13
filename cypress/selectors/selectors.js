@@ -152,6 +152,20 @@ scriptDividend: {
     disabledButtonClass: '--disabled',
     discountField: 'input[value="6%"]',
     buttonTag: 'button',
-   
+    locationDropDownInStep1: '.DropdownList_m-dropdown-list__pDDyb'
+},
+
+subscriptionCenter: {
+    topicOption: 'div.SubscriptionCenterSelector_m-subscription-center-selector__F1_zR span',
+    buttonNext: 'span.button__text',
+    backButton: 'div.SubscriptionCenterBack_a-subscription-center-back__button__cZQv0',
+    Step2Title: 'h3.SubscriptionCenterStep_m-subscription-center-step__title__EyMt5',
+    itemOption: 'button.SubscriptionCenterCard_a-subscription-center-card__button__30l2B',
+    firstNameField: 'input#fxb_6ff95bc7-b7f4-4afb-8068-1c4008ffd559_Fields_7c0ab4ee-c584-4e19-b686-ac0aeaea501b__Value',
+    lastNameField: 'input#fxb_6ff95bc7-b7f4-4afb-8068-1c4008ffd559_Fields_07ed15bb-3894-4aa1-93be-2fd22d1ca09b__Value',
+    emailField: 'input#fxb_6ff95bc7-b7f4-4afb-8068-1c4008ffd559_Fields_dbd90087-db38-4068-9c0c-6556457845c3__Value',
+    agreementCheckBox: '.Checkbox_m-checkbox__mBUkr input[type="checkbox"]',
+    submitButton: 'button[type="submit"]',
+    finalPageTitle: 'div.SubscriptionCenterStep_m-subscription-center-step__steps__3kYks'
 }
 }

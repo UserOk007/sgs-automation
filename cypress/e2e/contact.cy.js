@@ -10,7 +10,8 @@ describe('validate tests in Contact Us page form', () => {
 
         cy.visit(urls.contactUsTest);
         cy.wait(5000);
-        cy.get(selectors.cookiesPopUp.acceptButton).should('be.visible').click();
+        cy.get(selectors.cookiesPopUp.acceptButton)
+            .should('be.visible').click();
         cy.wait(3000);
     });
 
@@ -49,7 +50,8 @@ describe('validate tests in Contact Us page form', () => {
 
     it(`Contact button is disabled`,
         () => {
-            cy.get(selectors.contact.contactButton).should('have.class', selectors.contact.disabledContactButtonClass);
+            cy.get(selectors.contact.contactButton)
+                .should('have.class', selectors.contact.disabledContactButtonClass);
         });
 
     it(`Verify Invalid messages are shown`,
@@ -68,7 +70,8 @@ describe('validate tests in Contact Us page form', () => {
         })
 
     it('Privacy Statement text is contains a link', () => {
-        cy.get(selectors.contact.privacyStatementLink).should('have.attr', 'href', '/en/online-privacy-statement');
+        cy.get(selectors.contact.privacyStatementLink)
+            .should('have.attr', 'href', '/en/online-privacy-statement');
     });
 
 });

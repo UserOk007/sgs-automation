@@ -11,6 +11,7 @@ export const urls = {
     officeDirectoryProd: 'https://www.sgs.com/en/office-directory',
     homePageUAT: 'https://uat.sgs-next.com/en',
     dividendCalculatorUAT: 'https://uat.sgs-next.com/en/testing-october-folder/dividend-calculator',
+    subscriptionCenterUAT: 'https://uat.sgs-next.com/en/newsletters/subscription-center-form'
     
 
 }

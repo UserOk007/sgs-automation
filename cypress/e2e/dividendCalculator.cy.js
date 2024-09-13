@@ -11,22 +11,67 @@ describe('tests for dividend calculator page', () => {
 
         cy.visit(urls.dividendCalculatorUAT);
         cy.wait(5000);
-        cy.get(selectors.cookiesPopUp.acceptButton).should('be.visible').click();
+
+        cy.get(selectors.cookiesPopUp.acceptButton)
+            .should('be.visible').click();
+
         cy.wait(3000);
     })
 
     it('select location, go to step 2, check error if user doesn"t agree conditions, go to page 3, verify error messages are shown if user submits form with empty fields', () => {
-        cy.get(selectors.scriptDividend.locationDropDown).select(1);
-        cy.get(selectors.scriptDividend.buttonTag).contains(testData.dividendCalculator.submitButton).should('not.have.class', selectors.scriptDividend.disabledButtonClass).click();
-        cy.get(selectors.scriptDividend.buttonTextClass).contains(testData.dividendCalculator.dontAgreeButton).invoke('css', 'pointer-events', 'auto').click();
-        cy.get(selectors.scriptDividend.errorMessage).should('be.visible');
-        cy.get(selectors.scriptDividend.buttonTextClass).contains(testData.dividendCalculator.agreeButton).invoke('css', 'pointer-events', 'auto').click();
-        cy.get(selectors.scriptDividend.dividendCalculatorArea).should('be.visible');
-        cy.get(selectors.scriptDividend.discountField).should('be.disabled');
-        cy.get(selectors.scriptDividend.fieldClass).eq(3).should('be.disabled');
-        cy.get(selectors.scriptDividend.fieldClass).eq(4).should('be.disabled');
-        cy.get(selectors.scriptDividend.fieldClass).eq(5).should('be.disabled');
-        cy.get(selectors.scriptDividend.buttonTag).contains(testData.dividendCalculator.calculateButton).click();
-        cy.get(selectors.scriptDividend.errorMessageWhenAllFieldsEmpty).should('have.length', 2)
+
+        cy.handleDividendScriptCalculator(selectors, testData);
+
+        cy.get(selectors.scriptDividend.dividendCalculatorArea)
+            .should('be.visible');
+
+        cy.get(selectors.scriptDividend.discountField)
+            .should('be.disabled');
+
+        cy.get(selectors.scriptDividend.fieldClass).eq(3)
+            .should('be.disabled');
+
+        cy.get(selectors.scriptDividend.fieldClass).eq(4)
+            .should('be.disabled');
+
+        cy.get(selectors.scriptDividend.fieldClass).eq(5)
+            .should('be.disabled');
+
+        cy.get(selectors.scriptDividend.buttonTag)
+            .contains(testData.dividendCalculator.calculateButton).click();
+
+        cy.get(selectors.scriptDividend.errorMessageWhenAllFieldsEmpty)
+            .should('have.length', 2)
     });
+
+    it('Submit form with valid values and verify calculated values are expected ones', () => {
+
+        cy.handleDividendScriptCalculator(selectors, testData);
+
+        cy.get(selectors.scriptDividend.fieldClass).eq(2)
+            .should('be.disabled')
+            .and('have.value', testData.dividendCalculator.discountPercentage)
+
+        cy.get(selectors.scriptDividend.fieldClass).eq(0).type('100');
+        cy.get(selectors.scriptDividend.fieldClass).eq(1).type('20.5');
+        cy.contains('button', 'Calculate').click();
+
+        cy.get(selectors.scriptDividend.fieldClass).eq(3)
+            .should('have.value', testData.dividendCalculator.issuePriceOfNewShares);
+
+        cy.get(selectors.scriptDividend.fieldClass).eq(4)
+            .should('have.value', testData.dividendCalculator.numberOfNewShares);
+
+        cy.get(selectors.scriptDividend.fieldClass).eq(5)
+            .should('have.value', testData.dividendCalculator.cashDistribution);
+    })
+
+    it.only('Go to step 3, reload the page and verify user is at the step 1', () => {
+
+        cy.handleDividendScriptCalculator(selectors, testData);
+        cy.reload();
+        cy.get(selectors.scriptDividend.locationDropDownInStep1).should('exist');
+        cy.get(selectors.scriptDividend.dividendCalculatorArea).should('not.exist');
+
+    })
 })
