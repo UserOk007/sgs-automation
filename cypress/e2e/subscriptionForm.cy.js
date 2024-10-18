@@ -20,7 +20,7 @@ describe("validate tests in Contact Us page form", () => {
     );
   });
 
-  it.only("Select option in step 1, step 2, go to step 3 and submit the form", () => {
+  it("Select option in step 1, step 2, go to step 3 and submit the form", () => {
     cy.MoveFromStep1ToStep2(selectors);
 
     cy.get(selectors.subscriptionCenter.itemOption).eq(0).click();

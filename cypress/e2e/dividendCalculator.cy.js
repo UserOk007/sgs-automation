@@ -64,7 +64,7 @@ describe("tests for dividend calculator page", () => {
       .should("have.value", testData.dividendCalculator.cashDistribution);
   });
 
-  it.only("Go to step 3, reload the page and verify user is at the step 1", () => {
+  it("Go to step 3, reload the page and verify user is at the step 1", () => {
     cy.handleDividendScriptCalculator(selectors, testData);
     cy.reload();
     cy.get(selectors.scriptDividend.locationDropDownInStep1).should("exist");
